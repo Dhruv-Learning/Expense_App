@@ -1,0 +1,147 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1 style="margin: auto;">Sign In Form</h1>
+<form id="myForm">
+
+    <label for="username">User Name :</label>
+    <input type="text" placeholder="Enetr your username" id="username"><br><br>
+
+    <label for="email">Email :</label>
+    <input type="email" placeholder="abc@gmail.com" id="email"><br><br>
+
+    <label for="password">Password :</label>
+    <input type="password" placeholder="Enter  Password" id="password"><br><br>
+
+    <label for="confirmPassword">Confirm Password :</label>
+    <input type="password" placeholder="Confirm Password" id="confirmPassword"><br><br>
+
+    <button type="submit" id="signup">SignUp</button>
+</form>
+<div id="msg"></div>
+
+
+
+<script>
+
+            let form =document.getElementById("myForm");
+             document.body.style.background="black";
+            document.body.style.color="white";
+            form.style.marginLeft="38vw";
+            form.style.marginTop="200px";
+            let msg =document.getElementById("msg");
+            msg.style.color="red";
+            msg.style.marginLeft="400px";
+            msg.style.font="20 px"
+            msg.style.marginTop="40px";
+
+
+            form.addEventListener("submit",function(e){
+                e.preventDefault();
+
+            let username =document.getElementById("username").value;
+            let email =document.getElementById("email").value;
+            let password =document.getElementById("password").value;
+            let confirmPassword =document.getElementById("confirmPassword").value;
+                if(username.trim() === ""){
+                alert("username is mendatry.")
+            }
+             else if(email.trim() === ""){
+                alert("email is mendatry.")
+            }
+             else if(password.trim().length <8){
+                alert("Please enter password min of 8 char")
+            }
+             else if(confirmPassword !=password){
+                alert("Password and confirm Password should be same ")
+            }
+            else{
+                msg.innerHTML="Login Successfully !";
+                localStorage.setItem("username" ,username);
+                localStorage.setItem("password" ,password);
+                window.location.href="login.html";
+            }
+
+
+            });
+
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Join Us Today</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Create Account</h1>
+            <p>Join us and start your journey today</p>
+        </div>
+        
+        <form id="myForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Enter your username" id="username">
+                    <span class="input-icon">👤</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                    <input type="email" placeholder="example@gmail.com" id="email">
+                    <span class="input-icon">📧</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="Create a strong password" id="password">
+                    <span class="input-icon">🔒</span>
+                </div>
+                <div class="strength-meter">
+                    <div class="strength-fill" id="strengthBar"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="Confirm your password" id="confirmPassword">
+                    <span class="input-icon">🔐</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="signup">
+                Create Account
+            </button>
+        </form>
+
+        <div id="msg" class="message"></div>
+
+        <div class="login-link">
+            <p>Already have an account? <a href="#" id="loginLink">Sign in here</a></p>
+        </div>
+    </div>
+
+    <script src="/app.js"> </script>
+</body>
+</html>
