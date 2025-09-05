@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="contanier">
@@ -16,19 +17,32 @@
     <input type="number" id="amount" placeholder="Enter amount expended " min-value="0" required>
     <select name="" id="category">
       <option value="food">🍔 Food</option>
-      <option value="food">🛒 Shooping</option>
-      <option value="food">🖋 Education</option>
-      <option value="food">🏡 Home</option>
-      <option value="food">🚋 Transport</option>
-      <option value="food">🎁 Other</option>
+      <option value="Shooping">🛒 Shooping</option>
+      <option value="Education">🖋 Education</option>
+      <option value="Home">🏡 Home</option>
+      <option value="Transport">🚋 Transport</option>
+      <option value="Other">🎁 Other</option>
     </select>
     <button id="addIteam" type="submit">Add Expense</button>
   </form>
-  <ul id="expenseList"></ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Tittle</th>
+        <th>Amount</th>
+        <th>Category</th>
+      </tr>
+      <tbod id="tBody">
+
+      </tbody>
+    </thead>
+  </table>
+
   <canvas id="expenseCart" height="400" width="400"></canvas>
   </div>
 
 
   <script src="/dashBoard.js"></script>
+  <script src="/storage.js"></script>
 </body>
 </html>
