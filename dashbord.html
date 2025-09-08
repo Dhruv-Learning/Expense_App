@@ -25,18 +25,20 @@
     </select>
     <button id="addIteam" type="submit">Add Expense</button>
   </form>
-  <table>
+  <table border="2" id="table">
     <thead>
       <tr>
         <th>Tittle</th>
         <th>Amount</th>
         <th>Category</th>
+        <th>Time</th>
       </tr>
-      <tbod id="tBody">
+    </thead>
+      <tbody id="tBody">
 
       </tbody>
-    </thead>
   </table>
+  <button onclick="remove()" id="removeBtn">Remove❌</button>
 
   <canvas id="expenseCart" height="400" width="400"></canvas>
   </div>

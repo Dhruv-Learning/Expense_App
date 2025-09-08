@@ -5,4 +5,4 @@ function saveExpense(expennses){
 
 function getExpense(){
   return JSON.parse(localStorage.getItem("expenses")) || [];
-}
+} 

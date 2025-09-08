@@ -108,3 +108,25 @@ form input.error {
 #category option{
   background: linear-gradient(135deg, #7552a3 0%, #6b305e 100%);
 }
+#table{
+  margin-top: 30px;
+  opacity: 0;
+  border: 2px solid rgb(101, 227, 236);
+  color: white;
+
+}
+
+#removeBtn{
+  opacity: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  background: #c76958;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+#removeBtn:hover{
+  background: #f52323;
+}

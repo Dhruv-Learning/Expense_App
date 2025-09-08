@@ -1,5 +1,7 @@
 let form =document.getElementById("expenseForm");
 let tBody =document.getElementById("tBody")
+let tableBox =document.getElementById("table");
+let removeBtn =document.getElementById("removeBtn");
 
 form.addEventListener("submit",function(e){
   e.preventDefault();
@@ -17,12 +19,28 @@ form.addEventListener("submit",function(e){
   let modifyed =new Date(date)
 
   // Display data on scren...
+  tableBox.style.opacity="1";
+  removeBtn.style.opacity="1";
   let tr =document.createElement("tr");
   tr.innerHTML=`
-<td>${tittle}</td>
-<td>${amount}</td>
-<td>${type}</td>`
+  <td>${tittle}</td>
+  <td>${amount}</td>
+  <td>${type}</td>
+  <td>${modifyed}</td>`;
   tBody.appendChild(tr);
+
+  
+  
   document.getElementById("tittle").value="";
   document.getElementById("amount").value="";
 }) 
+
+function remove() {
+  let tBody =document.getElementById("tBody");
+  let tr =document.getElementsByTagName("tr")
+  tBody.removeChild(tr[tr.length-1]);
+  if(tr.length <1){
+    tableBox.style.opacity="0";
+    removeBtn.style.opacity="0";
+  }
+}
