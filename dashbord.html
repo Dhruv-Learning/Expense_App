@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Express Tracker</title>
   <link rel="stylesheet" href="/dashboard.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="contanier">
-    <h1>📊 Dashboard</h1>
-  <button id="logoutBtn">Logout</button>
 
-  <form id="expenseForm">
-    <input type="text" placeholder="Enter the expense tittle" id="tittle" required>
-    <input type="number" id="amount" placeholder="Enter amount expended " min-value="0" required>
-    <select name="" id="category">
-      <option value="food">🍔 Food</option>
-      <option value="Shooping">🛒 Shooping</option>
-      <option value="Education">🖋 Education</option>
-      <option value="Home">🏡 Home</option>
-      <option value="Transport">🚋 Transport</option>
-      <option value="Other">🎁 Other</option>
-    </select>
-    <button id="addIteam" type="submit">Add Expense</button>
-  </form>
-  <table border="2" id="table">
-    <thead>
-      <tr>
-        <th>Tittle</th>
-        <th>Amount</th>
-        <th>Category</th>
-        <th>Time</th>
-      </tr>
-    </thead>
-      <tbody id="tBody">
+  <div class="dashboard-wrapper">
 
-      </tbody>
-  </table>
-  <button onclick="remove()" id="removeBtn">Remove❌</button>
+    <!-- Left side -->
+    <div class="container">
+      <div class="insideContainer">
+        <h1>📊 Dashboard</h1>
+        <button id="logoutBtn">Logout</button>
+      </div>
 
-  <canvas id="expenseCart" height="400" width="400"></canvas>
+      <form id="expenseForm">
+        <input type="text" id="title" placeholder="Enter the expense title" required />
+        <input type="number" id="amount" placeholder="Enter amount expended" required />
+        <select id="category">
+          <option value="Food">🍔 Food</option>
+          <option value="Transport">🚌 Transport</option>
+          <option value="Shopping">🛍 Shopping</option>
+          <option value="Education">🖋 Education</option>
+          <option value="Home">🏠 Home</option>
+          <option value="Other">🎁 Others</option>
+        </select>
+        <button type="submit">Add Expense</button>
+      </form>
+
+      <ul id="expenseList"></ul>
+    </div>
+
+    <!-- Right chart sidee -->
+    <div class="chart-container">
+      <h2>📈 Expense Chart</h2>
+      <canvas id="expenseChart" width="400" height="400"></canvas>
+    </div>
+
   </div>
 
+  <!-- Summary Card -->
+<div class="card summary-card">
+  <h2>💹 Summary</h2>
+  <p><b>Total Income:</b> ₹<span id="totalIncome">0</span></p>
+  <p><b>Total Expense:</b> ₹<span id="totalExpense">0</span></p>
+  <p><b>Balance:</b> ₹<span id="balance">0</span></p>
+</div>
 
-  <script src="/dashBoard.js"></script>
+<!-- Budget Card -->
+<div class="card budget-card">
+  <h2>📊 Monthly Budget</h2>
+  <input type="number" id="budgetInput" placeholder="Set your budget (₹)">
+  <button id="setBudgetBtn">Set Budget</button>
+  <p id="budgetStatus"></p>
+</div>
+
+
+  
+
   <script src="/storage.js"></script>
+  <script src="/dashBoard.js"></script>
 </body>
 </html>
