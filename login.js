@@ -11,7 +11,7 @@ form.addEventListener("submit", function (e) {
     password1 == localStorage.getItem("password") 
   ) {
     alert("Login Successfully !");
-    window.location.href = "dashbord.html";
+    window.location.href = "dashboard.html";
   } else {
     alert(
       "Username and password is invalid ! , Please enter coorrect username and password."
